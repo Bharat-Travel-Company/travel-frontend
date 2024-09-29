@@ -53,7 +53,7 @@ function App() {
 
   const fetchTouristData = async () => {
     try {
-      const accessToken = localStorage.getItem("accessToken"); // Retrieve token from localStorage
+      const accessToken = localStorage.getItem("token"); // Retrieve token from localStorage
   
       if (!accessToken) {
         setError("Access token not available");

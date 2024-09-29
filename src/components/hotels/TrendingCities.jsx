@@ -7,7 +7,7 @@ const TrendingCities = () => {
     <div className="pt-10 pb-16">
       <div className="text-center">
         <h1 className="heading">Trending Cities</h1>
-        <p className="mt-2">The most searched-for cities on TipGuide</p>
+        <p className="mt-2">The most searched-for cities on ConnectTrip</p>
       </div>
       <div className="mt-4 flex flex-wrap gap-4">
         {trendingCities.map(

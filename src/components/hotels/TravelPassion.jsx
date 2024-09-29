@@ -5,7 +5,7 @@ const TravelPassion = () => {
   return (
     <div className="pt-10 pb-16">
       <h1 className="heading mb-3">travel your passion</h1>
-      <p>most brilliant reasons Estrada should be your one-stop-shop!</p>
+      <p>Offers a wide range of high-quality, affordable products with friendly customer support, exclusive discounts, eco-friendly options, expert advice, cutting-edge technology, and reliable service, all in one convenient place.</p>
       <div className="mt-5 flex flex-wrap gap-4">
         {travelPassions.map(
           ({ id, name, image, number_of_reviews, rating }) => (
