@@ -19,7 +19,7 @@ const Explore = () => {
     <div className="pt-10 pb-16">
       <div className="flex-center-between mb-4">
         <div>
-          <h1 className="heading">the best hotels around the world</h1>
+          <h1 className="heading">the best hotels around the India</h1>
           <p className="mt-2">
             exquiste and stunning hotels to spend your long night
           </p>

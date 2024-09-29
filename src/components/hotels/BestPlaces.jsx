@@ -5,7 +5,7 @@ const BestPlaces = () => {
   return (
     <div className="py-16">
       <div className="text-center">
-        <h1 className="heading">search a best place in the world</h1>
+        <h1 className="heading">search a best place in the India</h1>
         <p className="mt-4">
           Whether you're looking for places for a vacation. we are here to guide
           you about the details you need to check in and ease your trips in
