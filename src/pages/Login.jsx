@@ -3,12 +3,15 @@ import { FaFacebook } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setIsLoggedIn } from "../features/dataSlice";
 
 const Login = () => {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
+  const dispatch = useDispatch();
   const navigation = useNavigate();
 
   // const fetchTouristData = async () => {
@@ -61,6 +64,7 @@ const Login = () => {
         if (res.data.message === "Logged In Successfully") {
           alert("Logged In Successfully");
           navigation("/")
+          dispatch(setIsLoggedIn(true));
 
         } else {
           alert(res.data.message);
