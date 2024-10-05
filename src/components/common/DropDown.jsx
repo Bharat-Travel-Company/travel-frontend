@@ -72,7 +72,7 @@ const Dropdown = () => {
             <span className="text-muted">My Rewards</span>
           </Link> */}
           <Link
-            to="/login"
+            to="/"
             className="p-2 space-x-3 rounded-lg flex-align-center sm:cursor-pointer hover:bg-slate-100 dark:hover:bg-hover-color-dark"
             onClick={signOut}
           >
