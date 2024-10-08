@@ -5,6 +5,7 @@ const initialState = {
   startIndex: 0,
   endIndex: 0,
   loading: true,
+  isLoggedIn: false, // New flag for login status
 };
 
 const dataSlice = createSlice({
@@ -14,7 +15,6 @@ const dataSlice = createSlice({
     getCurrentItems: (state, action) => {
       state.currentDataItems = action.payload;
     },
-
     setIsLoading: (state, action) => {
       state.loading = action.payload;
     },
@@ -24,6 +24,9 @@ const dataSlice = createSlice({
     getEndIndex: (state, action) => {
       state.endIndex = action.payload;
     },
+    setIsLoggedIn: (state, action) => { // Action to update login status
+      state.isLoggedIn = action.payload;
+    },
   },
 });
 
@@ -31,5 +34,10 @@ export default dataSlice.reducer;
 
 export const dataStore = (state) => state.data;
 
-export const { getCurrentItems, getStartIndex, getEndIndex, setIsLoading } =
-  dataSlice.actions;
+export const {
+  getCurrentItems,
+  getStartIndex,
+  getEndIndex,
+  setIsLoading,
+  setIsLoggedIn, // Export action to set login status
+} = dataSlice.actions;

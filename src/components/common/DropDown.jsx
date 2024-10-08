@@ -12,10 +12,15 @@ import { uiStore } from "../../features/uiSlice";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiFileText } from "react-icons/fi";
-
+import { useDispatch } from "react-redux";
+import { setIsLoggedIn } from "../../features/dataSlice";
 const Dropdown = () => {
   const { isDropdownOpen } = useSelector(uiStore);
+  const dispatch = useDispatch();
 
+  const signOut= () =>{
+    dispatch(setIsLoggedIn(false));
+  }
   return (
     <>
       {isDropdownOpen && (
@@ -67,8 +72,9 @@ const Dropdown = () => {
             <span className="text-muted">My Rewards</span>
           </Link> */}
           <Link
-            to="/login"
+            to="/"
             className="p-2 space-x-3 rounded-lg flex-align-center sm:cursor-pointer hover:bg-slate-100 dark:hover:bg-hover-color-dark"
+            onClick={signOut}
           >
             <BiLogOut className="text-muted" />
             <span className="text-muted">Sign out</span>
