@@ -94,7 +94,7 @@ const HotelSearch = () => {
               </div>
             </div>
             <HotelsList />
-            <Pagination itemsPerPage={9} url="/data/hotels.json" />
+            <Pagination itemsPerPage={12} url="/data/hotels.json" />
           </div>
         </div>
       </div>
