@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import BackToTopButton from "./components/common/BackToTopButton";
 import Footer from "./components/common/Footer";
 import Loader from "./components/common/Loader";
 import Navbar from "./components/common/Navbar";
-import NewsLetter from "./components/common/NewsLetter";
+
 import { closeDropdown, closeNotifications } from "./features/uiSlice";
 
 import {
@@ -15,7 +15,6 @@ import {
   BookingSuccess,
   CarDetails,
   CarRental,
-  CarsSearch,
   ConfirmBooking,
   Flights,
   FlightsSearch,
@@ -33,13 +32,13 @@ import {
 import HotelSearch from "./pages/HotelsSearch";
 import axios from "axios";
 function App() {
-  const [loggedInTourist, setLoggedInTourist] = useState(null);
+  const [loggedInTourist, setLoggedInTourist] = useState();
   const [error, setError] = useState("");
 
   const [showButton, setShowButton] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const dispatch = useDispatch();
-  const route = useLocation();
+
 
   // Show/Hide scroll to top button
   window.addEventListener("scroll", () => {
@@ -50,41 +49,42 @@ function App() {
     dispatch(closeDropdown());
     dispatch(closeNotifications());
   };
-
   const fetchTouristData = async () => {
     try {
-      const accessToken = localStorage.getItem("token"); // Retrieve token from localStorag
+      const accessToken = localStorage.getItem("token");
       if (!accessToken) {
         setError("Access token not available");
-        console.log("error")
+        console.log("Access token error");
         return;
       }
+  
       const response = await axios.get(
         "https://travel-backend-nwtf.onrender.com/api/v1/tourist/current-tourist",
         {
-          withCredentials: true, // For cookie-based authentication
+          withCredentials: true, // Only needed if using cookies
           headers: {
-            Authorization: `Bearer ${accessToken}`, // Send JWT token in the Authorization header
+            Authorization: `Bearer ${accessToken}`,
           },
         }
-      );    
-      // Assuming the data is returned in response.data
-      setLoggedInTourist(response.data);
-      console.log("noob")
-      console.log(response.data);
-      console.log("noob")
-
+      );
+  
+      if (response.status === 200) {
+        setLoggedInTourist(response.data.data || "No tourist data available");
+        console.log("Tourist Data:", response.data);
+      } else {
+        setError(response.data.message || "Unable to fetch tourist data");
+        console.log("Error Response:", response);
+      }
     } catch (err) {
       setError("Error fetching tourist data");
-      console.error(err);
+      console.error("Fetch Error:", err);
     }
   };
-  
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     fetchTouristData();
-    console.log(loggedInTourist);
+    // console.log(loggedInTourist);// returning null
   }, );
 
   // Loader when page is loading
