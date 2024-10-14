@@ -4,7 +4,8 @@ const BestWay = () => {
       <div className="text-center max-w-[400px] mx-auto">
         <h1 className="heading">better way to find your perfect flight</h1>
         <p>
-        Book flights easily with competitive fares and flexible options. Choose from economy, business, or first-class on top routes, backed by trusted airlines and 24/7 support from Connect Trip.
+        {/* Book flights easily with competitive fares and flexible options. Choose from economy, business, or first-class on top routes, backed by trusted airlines and 24/7 support from Connect Trip. */}
+        Jet off to your dream destination hassle-free flight booking. Your next adventure starts with a single click. Book your flight today! just for you from CONNECT TRIP.
         </p>
       </div>
       <div className="mt-8 flex justify-center gap-4 flex-col sm:flex-row">
