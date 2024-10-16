@@ -7,6 +7,10 @@ import { Provider } from "react-redux";
 import store from "./app/store";
 import { AnimatePresence } from "framer-motion";
 
+// For Hotel Modal Slider
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
