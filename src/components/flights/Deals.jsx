@@ -33,8 +33,7 @@ const Deals = () => {
                   Deals for every budget
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Incidunt, aperiam culpa error doloribus veniam dolorem.
+                Whether you're splurging or saving, we've got the perfect options to match your budget without compromising on quality.
                 </p>
               </div>
             </div>
@@ -48,8 +47,7 @@ const Deals = () => {
                   Awesome Customer Support
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Incidunt, aperiam culpa error.
+                Our dedicated team is here 24/7, ensuring you have a hassle-free and enjoyable journey from start to finish.
                 </p>
               </div>
             </div>
@@ -61,8 +59,7 @@ const Deals = () => {
               <div>
                 <h1 className="text-lg font-semibold">Free Cancellation</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Incidunt.
+                Plans change? No problem! Enjoy the flexibility of our free cancellation policy and book with confidence.
                 </p>
               </div>
             </div>
@@ -74,8 +71,7 @@ const Deals = () => {
               <div>
                 <h1 className="text-lg font-semibold">Your Best Security</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Incidunt, aperiam culpa error.
+                Travel with peace of mind, knowing that your safety and security are our top priority every step of the way.
                 </p>
               </div>
             </div>
@@ -87,8 +83,7 @@ const Deals = () => {
               <div>
                 <h1 className="text-lg font-semibold">Quality Pilots</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Incidunt, aperiam culpa error.
+                Our experienced and highly trained pilots are committed to making your journey safe, smooth, and enjoyable.
                 </p>
               </div>
             </div>

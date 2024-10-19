@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FaStar, FaStarHalfAlt, FaTimes } from "react-icons/fa";
 import { BiMap } from "react-icons/bi";
-import Slider from "react-slick";  // For the carousel
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Tabs as TabWrapper, Tab, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import {
@@ -16,6 +17,7 @@ import {
   RoomSelections,
   Trending,
 } from "../components/hotel-details";
+import "./";
 
 const HotelDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,18 +38,6 @@ const HotelDetails = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
-
-  // Slider settings for react-slick
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true, // Show next/prev buttons
-  };
-
 
   return (
     <div className="pt-16 px-[3%] md:px-[6%]">
@@ -105,48 +95,48 @@ const HotelDetails = () => {
               Gallery{" "}
             </button>
           </div>
-          {/* <div className="overflow-hidden h-40 md:h-48 lg:h-56">
-            <img
-              src="/images/place (34).jpg"
-              alt="Small Image 3"
-              className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            />
-          </div> */}
         </div>
       </div>
 
-       {/* Modal for Gallery */}
-       {isModalOpen && (
+      {/* Modal with React Responsive Carousel */}
+      {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="relative bg-white p-5 rounded-lg w-full max-w-md h-[80vh] overflow-hidden">
             {/* Close Button */}
             <button
-              className="absolute top-3 right-3 text-gray-800 hover:text-gray-600" 
+              className="absolute top-3 right-3 text-gray-800 hover:text-gray-600"
               onClick={closeModal}
             >
               <FaTimes size={18} />
             </button>
 
-            <h2 className="text-xl font-bold mb-4 text-center text-black">Room Gallery</h2>
+            <h2 className="text-xl font-bold mb-4 text-center text-black">
+              Room Gallery
+            </h2>
 
-            {/* Carousel */}
-            <div className="h-full overflow-y-scroll scrollbar-hide">
-              <Slider {...settings}>
-                {roomImages.map((img, index) => (
-                  <div key={index} className="w-full h-[60vh]">
-                    <img
-                      src={img}
-                      alt={`Room Image ${index + 1}`}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
+            {/* React Responsive Carousel */}
+            <Carousel
+              showArrows={true}
+              infiniteLoop={true}
+              dynamicHeight={false}
+              showThumbs={false}
+            >
+              {roomImages.map((img, index) => (
+                <div
+                  key={index}
+                  className="h-[300px] w-full flex items-center justify-center"
+                >
+                  <img
+                    src={img}
+                    alt={`Room Image ${index + 1}`}
+                    className="h-full w-full object-cover rounded-lg"
+                  />
+                </div>
+              ))}
+            </Carousel>
           </div>
         </div>
       )}
-
 
       {/* Tags and Rating */}
       <div className="mt-5 flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
