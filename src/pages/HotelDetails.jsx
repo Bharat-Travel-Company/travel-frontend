@@ -61,9 +61,9 @@ const HotelDetails = () => {
       </div>
 
       {/* Image Gallery */}
-      <div className="mt-5 flex flex-wrap gap-4 rounded-xl overflow-hidden relative">
+      <div className="mt-5 flex flex-col md:flex-row flex-wrap gap-4 rounded-xl overflow-hidden relative">
         {/* Main Image */}
-        <div className="flex-1 basis-[30rem] overflow-hidden ">
+        <div className="w-full md:flex-1 md:basis-[30rem] h-64 md:h-auto overflow-hidden">
           <img
             src="/images/place (31).jpg"
             alt="Main Image"
@@ -72,15 +72,15 @@ const HotelDetails = () => {
         </div>
 
         {/* Smaller Images */}
-        <div className="flex-1 basis-[16rem] flex flex-col gap-4">
-          <div className="overflow-hidden h-40 md:h-48 lg:h-56">
+        <div className="w-full md:flex-1 md:basis-[16rem] flex flex-row md:flex-col gap-4">
+          <div className="w-1/2 md:w-full h-40 md:h-48 lg:h-56 overflow-hidden">
             <img
               src="/images/place (32).jpg"
               alt="Small Image 1"
               className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
             />
           </div>
-          <div className="overflow-hidden h-40 md:h-48 lg:h-56 relative">
+          <div className="w-1/2 md:w-full h-40 md:h-48 lg:h-56 overflow-hidden relative">
             <img
               src="/images/place (33).jpg"
               alt="Small Image 2"
@@ -91,8 +91,7 @@ const HotelDetails = () => {
               className="absolute bottom-3 right-3 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
               onClick={openModal}
             >
-              {" "}
-              Gallery{" "}
+              Gallery
             </button>
           </div>
         </div>
