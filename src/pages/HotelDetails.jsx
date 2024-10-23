@@ -100,7 +100,7 @@ const HotelDetails = () => {
       {/* Modal with React Responsive Carousel */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="relative bg-white p-5 rounded-lg w-full max-w-md h-[80vh] overflow-hidden">
+          <div className="relative bg-white p-5 rounded-lg w-full max-w-md h-[70vh] overflow-hidden">
             {/* Close Button */}
             <button
               className="absolute top-3 right-3 text-gray-800 hover:text-gray-600"
@@ -119,16 +119,17 @@ const HotelDetails = () => {
               infiniteLoop={true}
               dynamicHeight={false}
               showThumbs={false}
+              
             >
               {roomImages.map((img, index) => (
                 <div
                   key={index}
-                  className="h-[300px] w-full flex items-center justify-center"
+                  className="h-[50vh] w-full flex items-center justify-center"
                 >
                   <img
                     src={img}
                     alt={`Rooms View ${index + 1}`}
-                    className="h-full w-full object-cover rounded-lg"
+                    className="h-[50vh] w-full object-cover rounded-lg"
                   />
                 </div>
               ))}
