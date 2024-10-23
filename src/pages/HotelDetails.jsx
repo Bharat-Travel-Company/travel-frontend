@@ -66,7 +66,7 @@ const HotelDetails = () => {
         <div className="w-full md:flex-1 md:basis-[30rem] h-64 md:h-auto overflow-hidden">
           <img
             src="/images/place (31).jpg"
-            alt="Main Image"
+            alt="Hotel Exterior View"
             className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
           />
         </div>
@@ -76,14 +76,14 @@ const HotelDetails = () => {
           <div className="w-1/2 md:w-full h-40 md:h-48 lg:h-56 overflow-hidden">
             <img
               src="/images/place (32).jpg"
-              alt="Small Image 1"
+              alt="Hotel Room1"
               className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
             />
           </div>
           <div className="w-1/2 md:w-full h-40 md:h-48 lg:h-56 overflow-hidden relative">
             <img
               src="/images/place (33).jpg"
-              alt="Small Image 2"
+              alt="Hotel Room2"
               className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
             />
 
@@ -127,7 +127,7 @@ const HotelDetails = () => {
                 >
                   <img
                     src={img}
-                    alt={`Room Image ${index + 1}`}
+                    alt={`Rooms View ${index + 1}`}
                     className="h-full w-full object-cover rounded-lg"
                   />
                 </div>
